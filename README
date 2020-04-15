@@ -1,0 +1,11 @@
+# CREATING PIPELINE FOR JOE'S FIBER DOMESTICATION PROJECT
+
+# Rename files
+
+
+# in english: find in the Preset Working Directory files with "*q.gz" in their name then read that list ("|") line-by-line, 
+# and while there are still lines, do the following commands:  "same" (an alias which I have set up in my profile to be the 
+# same as writing sha256sum -- this compares file content) whatever file is currently listed in $line (whatever line it just read) 
+# and append (">>") the results of that to a file called file.shasum; when you hit the end of the list of file names provided by find, 
+# be done
+find `pwd` -iname "*q.gz" | while read line; do same $line >> file.shasum; done
